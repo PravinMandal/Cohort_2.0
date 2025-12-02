@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dribbble - Discover the World’s Top Designers & Creative Professionals</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="data:image/png;base64,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" type="image/x-icon">
+</head>
+<body>
+    <div id="main">
+        <div id="innermain">
+            <div id="header">
+                <div class="hone">
+                    <img src="./Assests/Dribbble.png" alt="">
+                    <div class="darrow">
+                        <h4>Explore</h4>
+                        <img src="./Assests/Down arrow.svg" alt="">
+                    </div>
+                    <div class="darrow">
+                        <h4>Find Talent</h4>
+                        <img src="./Assests/Down arrow.svg" alt="">
+                    </div>
+                    <div class="darrow">
+                        <h4>Get Hired</h4>
+                        <img src="./Assests/Down arrow.svg" alt="">
+                    </div>
+                    <div class="darrow"><h4>Blog</h4></div>
+                </div>
+                <div id="htwo">
+                    <h4>Sign up</h4>
+                    <h4 id="login">Log in</h4>
+                </div>
+            </div>
+    
+            <div id="middle">
+                <div id="left">
+                    <div id="ltxt1">
+                        <h1>Discover the </h1>
+                        <h1>World's Top Designers </h1>
+                    </div>
+                    <div id="ltxt2">
+                        <h4>Explore Work from the most talented and accomplished</h4>
+                        <h4>designers ready to take on your next project</h4>
+                    </div>
+                    <div id="opt1">
+                        <div class="opt11" style="background-color: #3A3546; color: white;">
+                            <i class="ri-image-line"></i>
+                            <h4>Shots</h4>
+                        </div>
+                        <div class="opt11" class="opt12">
+                            <i class="ri-user-3-line"></i>
+                            <h4>Designers</h4>
+                        </div>
+                        <div class="opt11" class="opt12">
+                            <i class="ri-file-list-2-line"></i>
+                            <h4>Services</h4>
+                        </div>
+                    </div>
+                    <div id="inp">
+                        <input type="text" placeholder="What type of design are you interested in?">
+                        <div id="search">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+                    <div id="popular">
+                        <h5>Popular:</h5>
+                        <h4>dashboard</h4>
+                        <h4>landing page</h4>
+                        <h4>e-commerce</h4>
+                        <h4>logo</h4>
+                        <h4>card</h4>
+                        <h4>icons</h4>
+                    </div>
+                </div>
+                <div id="right">
+                    <video src="https://cdn.dribbble.com/uploads/65454/original/3d47c346ad505c96ef0d2987ea972e76.mp4?1757355803" autoplay muted loop></video>
+                </div>
+            </div>
+    
+            <div id="content">
+                <div id="topper">
+                    <div id="tone">
+                        <h4>Popular</h4>
+                        <img src="./Assests/Down arrow.svg" alt="">
+                    </div>
+                    <div id="ttwo">
+                        <h4 style="background-color:#F8F7F4;">Discover</h4>
+                        <h4>Animation</h4>
+                        <h4>Branding</h4>
+                        <h4>Illustration</h4>
+                        <h4>Mobile</h4>
+                        <h4>Print</h4>
+                        <h4>Product Design</h4>
+                        <h4>Typography</h4>
+                        <h4>Web Design</h4>
+                    </div>
+                    <div id="tthree">
+                        <i class="ri-filter-3-line"></i>
+                        <h4>filters</h4>
+                    </div>
+                </div>
+
+                <div id="maincontent">
+
+                    <div class="elem">
+                        <img src="https://cdn.dribbble.com/userupload/45201957/file/e97fffc8988ccb43f6f6e182f9a88989.jpg?format=webp&resize=1200x900&vertical=center" alt="">
+                        <div class="desc">
+                            <div class="profile">
+                                <img src="https://cdn.dribbble.com/users/2738/avatars/small/7a7c88d5883437bafc21c07f88f776fe.jpg?1484337163" alt="">
+                                <h4>Adam Grason</h4>
+                                <h3>Pro</h3>
+                            </div>
+                            <div class="likes">
+                                <div class="like">
+                                    <i class="ri-heart-fill"></i>
+                                    <h4>36</h4>
+                                </div>
+                                <div class="eye">
+                                    <i class="ri-eye-fill"></i>
+                                    <h4>1.4k</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <h4>Disney Tourist Blog</h4>
+                            <div class="mark">
+                                <i class="ri-bookmark-line"></i>
+                                <i class="ri-heart-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elem">
+                        <img src="https://cdn.dribbble.com/userupload/45198623/file/89fd8e8957c60e4cf4e4411df696aaf2.png?format=webp&resize=1200x900&vertical=center" alt="">
+                        <div class="desc">
+                            <div class="profile">
+                                <img src="https://cdn.dribbble.com/users/3825057/avatars/small/e3d7cb6ed0671937f1a7226e2cc449f1.png?1581940719" alt="">
+                                <h4>Lepisov Branding</h4>
+                                <h3>TEAM</h3>
+                            </div>
+                            <div class="likes">
+                                <div class="like">
+                                    <i class="ri-heart-fill"></i>
+                                    <h4>81</h4>
+                                </div>
+                                <div class="eye">
+                                    <i class="ri-eye-fill"></i>
+                                    <h4>7.7k</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <h4>R+Box+Prism Logo Concept</h4>
+                            <div class="mark">
+                                <i class="ri-bookmark-line"></i>
+                                <i class="ri-heart-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elem">
+                        <img src="https://cdn.dribbble.com/userupload/45195351/file/42e59b3bbe7296904c1ead3a21624cc5.png?format=webp&resize=450x338&vertical=center" alt="">
+                        <div class="desc">
+                            <div class="profile">
+                                <img src="https://cdn.dribbble.com/users/1769954/avatars/small/f36c405702847471e0f32a32d8feb7e6.png?1550652488" alt="">
+                                <h4>Deividas Bielskis</h4>
+                                <h3>Pro</h3>
+                            </div>
+                            <div class="likes">
+                                <div class="like">
+                                    <i class="ri-heart-fill"></i>
+                                    <h4>119</h4>
+                                </div>
+                                <div class="eye">
+                                    <i class="ri-eye-fill"></i>
+                                    <h4>13.5k</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <h4>Konto</h4>
+                            <div class="mark">
+                                <i class="ri-bookmark-line"></i>
+                                <i class="ri-heart-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elem">
+                        <img src="https://cdn.dribbble.com/userupload/45197798/file/fc9e2ae29c703d6930ff48dd1fd93e3f.gif" alt="">
+                        <div class="desc">
+                            <div class="profile">
+                                <img src="https://cdn.dribbble.com/users/559871/avatars/small/bc4e8b56092a7e794eb8cfddfb218f82.png?1753970064" alt="">
+                                <h4>Daniel Bodea / Kreatank</h4>
+                                <h3>Pro</h3>
+                            </div>
+                            <div class="likes">
+                                <div class="like">
+                                    <i class="ri-heart-fill"></i>
+                                    <h4>81</h4>
+                                </div>
+                                <div class="eye">
+                                    <i class="ri-eye-fill"></i>
+                                    <h4>9.9k</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <h4>Foxspark</h4>
+                            <div class="mark">
+                                <i class="ri-bookmark-line"></i>
+                                <i class="ri-heart-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elem">
+                        <img src="https://cdn.dribbble.com/userupload/45197289/file/8c4ebf6a311f7d3d53552b881707a26c.png?format=webp&resize=450x338&vertical=center" alt="">
+                        <div class="desc">
+                            <div class="profile">
+                                <img src="https://cdn.dribbble.com/users/466659/avatars/small/faff973d070ece355f9ac1280b5aa1c9.png?1697203398" alt="">
+                                <h4>HALO LAB</h4>
+                                <h3>TEAM</h3>
+                            </div>
+                            <div class="likes">
+                                <div class="like">
+                                    <i class="ri-heart-fill"></i>
+                                    <h4>138</h4>
+                                </div>
+                                <div class="eye">
+                                    <i class="ri-eye-fill"></i>
+                                    <h4>9k</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <h4>WellSmart-Logo Design</h4>
+                            <div class="mark">
+                                <i class="ri-bookmark-line"></i>
+                                <i class="ri-heart-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elem">
+                        <img src="https://cdn.dribbble.com/userupload/45199275/file/c7434cc4b019e036c7459035d25c47d7.webp?format=webp&resize=450x338&vertical=center" alt="">
+                        <div class="desc">
+                            <div class="profile">
+                                <img src="https://cdn.dribbble.com/users/78433/avatars/small/967957c559c6e2bd835a11443829a29a.png?1695711651" alt="">
+                                <h4>Jeroen van Eerden</h4>
+                                <h3>Pro</h3>
+                            </div>
+                            <div class="likes">
+                                <div class="like">
+                                    <i class="ri-heart-fill"></i>
+                                    <h4>57</h4>
+                                </div>
+                                <div class="eye">
+                                    <i class="ri-eye-fill"></i>
+                                    <h4>4.3k</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <h4>HALO LAB</h4>
+                            <div class="mark">
+                                <i class="ri-bookmark-line"></i>
+                                <i class="ri-heart-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elem">
+                        <img src="https://cdn.dribbble.com/userupload/45187325/file/485b1d198fec97840b1194970c7c886f.png?format=webp&resize=450x338&vertical=center" alt="">
+                        <div class="desc">
+                            <div class="profile">
+                                <img src="https://cdn.dribbble.com/users/1057940/avatars/small/f068710cc8e5fcebcbcd8f1f75d1b4ef.gif?1732126488" alt="">
+                                <h4>Nixtio</h4>
+                                <h3>TEAM</h3>
+                            </div>
+                            <div class="likes">
+                                <div class="like">
+                                    <i class="ri-heart-fill"></i>
+                                    <h4>209</h4>
+                                </div>
+                                <div class="eye">
+                                    <i class="ri-eye-fill"></i>
+                                    <h4>12.2k</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <h4>Fintech App Design</h4>
+                            <div class="mark">
+                                <i class="ri-bookmark-line"></i>
+                                <i class="ri-heart-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elem">
+                        <img src="https://cdn.dribbble.com/userupload/45198275/file/ae2f128b97ea4b529c5c135796f99e9b.png?format=webp&resize=450x338&vertical=center" alt="">
+                        <div class="desc">
+                            <div class="profile">
+                                <img src="https://cdn.dribbble.com/users/2710439/avatars/small/6fdff994c0eb1767b813d66f4fb1f5e5.jpg?1702128074" alt="">
+                                <h4>Wegrow</h4>
+                                <h3>TEAM</h3>
+                            </div>
+                            <div class="likes">
+                                <div class="like">
+                                    <i class="ri-heart-fill"></i>
+                                    <h4>64</h4>
+                                </div>
+                                <div class="eye">
+                                    <i class="ri-eye-fill"></i>
+                                    <h4>5.9k</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <h4>9CAP logo and website hero</h4>
+                            <div class="mark">
+                                <i class="ri-bookmark-line"></i>
+                                <i class="ri-heart-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

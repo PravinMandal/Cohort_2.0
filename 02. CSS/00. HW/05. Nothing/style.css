@@ -1,0 +1,229 @@
+@font-face {
+    font-family: Nothing;
+    src: url(./Fonts/Ndot-55-DoenNkNm.ttf);
+}
+
+@font-face {
+    font-family: one;
+    src: url(./Fonts/korataki-rg-3cf0d889.ttf);
+}
+
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 30px 30px;
+}
+
+#hone{
+    color: white;
+    font-size: 50px;
+    padding-left: 30px;
+    font-family: Nothing;
+}
+
+#hone img{
+    position: absolute;
+    width: 280px;
+    top: 13%;
+    left: 1.5%;
+}
+
+#htwo img{
+    position: absolute;
+    transform: scaleX(1) scaleY(0.6);
+    top: -200%;
+    left: -40%;
+}
+
+#htwo{
+    position: relative;
+    top: 50%;
+    align-items: center;
+    left: 15%;
+}
+
+#htwo input{
+    color: #27292C;
+    font-size: 20px;
+    background-color: black;
+}
+
+#hthree{
+    display: flex;
+    position: absolute;
+    right: -5%;
+}
+
+#hthree p{
+    color: white;
+    font-family: one;
+    padding-right: 110px;
+    font-size: 20px;
+}
+
+#hthree img{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+}
+
+#himg1{
+    left: -44%;
+    top: -50%;
+}
+#himg2{
+    left: -13%;
+    top: -50%;
+}
+#himg3{
+    left: 22%;
+    top: -50%;
+}
+
+#mone div{
+    position: absolute;
+    height: 2px;
+    background-color: white;
+}
+
+#mtwo div{
+    position: absolute;
+    height: 2px;
+    background-color: white;
+}
+
+#line1{
+    width: 150px;
+    transform: rotate(40deg);
+    left: 15%;
+    top: 16.5%;
+}
+#line2{
+    width: 250px;
+    left: 23%;
+    top: 22%;
+}
+#line3{
+    width: 140px;
+    transform: rotate(30deg);
+    left: 37.7%;
+    top: 26%;
+}
+#line4{
+    width: 900px;
+    left: 45.7%;
+    top: 30%;
+}
+
+#line5{
+    width: 245px;
+    transform: rotate(30deg);
+    left: 33%;
+    top: 29%;
+}
+#line6{
+    width: 70px;
+    left: 47%;
+    top: 36%;
+}
+#line7{
+    width: 70px;
+    transform: rotate(-50deg);
+    left: 73.5%;
+    top: 39%;
+}
+#line8{
+    width: 400px;
+    left: 77%;
+    top: 36%;
+}
+
+#mimg img{
+    height: 500px;
+    transform: rotate(-30deg);
+}
+#mimg1{
+    position: absolute;
+    left: 57%;
+    top: 22%;
+    z-index: 45;
+}
+#mimg2{
+    position: absolute;
+    left: 62%;
+    top: 26%;
+    z-index: 50;
+}
+
+#mtext p{
+    color: white;
+}
+
+#text1{
+    position: absolute;
+    font-size: 45px;
+    top: 48%;
+    left: 3%;
+    font-family: one;
+
+}
+#text2{
+    position: absolute;
+    font-size: 45px;
+    top: 55%;
+    left: 6%;
+    font-family: one;
+}
+#text3{
+    position: absolute;
+    font-size: 30px;
+    top: 75%;
+    left: 4.5%;
+    font-family: Nothing;
+}
+
+#footer div{
+    position: absolute;
+    height: 2px;
+    background-color: white;
+}
+
+
+#line9{
+    width: 640px;
+    left: 0%;
+    top: 81%;
+
+}
+#line10{
+    width: 100px;
+    transform: rotate(-40deg);
+    left: 38.6%;
+    top: 77.4%;
+}
+#line11{
+    width: 990px;
+    left: 44%;
+    top: 73.7%;
+}
+

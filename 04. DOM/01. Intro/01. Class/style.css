@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    font-size: 80px;
+    padding: 50px;
+}
+
+#inc, #dec {
+    color: white;
+    background-color: crimson;
+    padding: 20px 30px;
+}
+
+#top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

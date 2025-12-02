@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    #box {
+        width: 40%;
+        height: 40%;
+        background-color: aqua;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 40px;
+    }
+    
+    button {
+        padding: 8px 15px;
+        color: white;
+        background-color: crimson;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    button:active {
+        scale: 0.95;
+    }
+
+}

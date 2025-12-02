@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #cursor {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.1s linear;
+}
+main h1 {
+  font-size: 9vw;
+  font-weight: 800;
+  color: white;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+main #card {
+  width: 400px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+main #card p span {
+  color: rgb(19, 68, 216);
+}
+main #card #bar {
+  width: 100%;
+  height: 25px;
+  background-color: rgb(185, 185, 185);
+  border-radius: 50px;
+}
+main #card #bar #completion {
+  height: 100%;
+  width: 0%;
+  background-color: aqua;
+  border-radius: 50px;
+}
+main #card #bottom {
+  display: flex;
+  justify-content: space-between;
+}
+main #card #bottom h2 {
+  font-size: 35px;
+}
+main #card #bottom button {
+  padding: 10px 25px;
+  border-radius: 50px;
+  border: 1px solid black;
+  background-color: rgb(50, 172, 50);
+  cursor: pointer;
+}
+main #card #bottom button:active {
+  scale: 0.95;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-size: clamp(5px, 1vw, 20px);
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 30% 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.7fr;
+  grid-template-areas: "aside div1 div1 div1" "aside div2 div3 div4";
+}
+
+aside {
+  grid-area: aside;
+  background-image: url(./assests/image.png);
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+#div1 {
+  grid-area: div1;
+  background-image: url(./assests/image2.png);
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+#div2 {
+  grid-area: div2;
+  background-image: url(./assests/image3.png);
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+#div3 {
+  grid-area: div3;
+  background-image: url(./assests/image4.png);
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+#div4 {
+  grid-area: div4;
+  background-image: url(./assests/image5.png);
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+}/*# sourceMappingURL=style.css.map */

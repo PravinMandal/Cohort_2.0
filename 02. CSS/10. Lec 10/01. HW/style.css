@@ -1,0 +1,195 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif ;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    color: black;
+    background-color: white ;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px 1fr 0.8fr;
+    grid-template-areas: 
+        "header header header header"
+        "aside aside div1 div1"
+        "aside aside div2 div3"
+    ;
+
+    gap: 10px; 
+    padding: 0 30px 30px 30px;
+}
+
+header {
+    grid-area: header;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+aside {
+    grid-area: aside;
+}
+
+#div1 {
+    grid-area: div1;
+}
+
+#div2 {
+    grid-area: div2;
+    object-fit: cover;
+}
+
+#div3 {
+    grid-area: div3;
+    object-fit: cover;
+}
+
+#head1>img {
+    height: 25px;
+}
+
+.head {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#head2 h4 {
+    font-weight: 200;
+}
+
+#headerbutton {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#head1 {
+    gap: 5px !important;
+}
+
+#arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    color: black;
+    border-radius: 50%;
+    background-color: #BCC2FF;
+}
+
+aside {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    gap: 80px;
+}
+
+#aside1 h1 {
+    font-size: 100px;
+    font-weight: 100;
+}
+
+#aside11 {
+    display: flex;
+    align-items: center;
+}
+#aside14 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#aside1 img {
+    height: 65px;
+}
+
+#how {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 0px; */
+    height: 60px;
+    width: 220px;
+    gap: 8px;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+
+#how>i {
+    font-size: 30px;
+}
+
+#aside15 {
+    display: flex;
+    gap: 23px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+#contact {
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    width: 160px;
+    border-radius: 50px;
+    background-color: black;
+}
+
+#contact h4 {
+    font-weight: 200;
+    font-size: 13px;
+}
+#contact i {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+#aside2 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#aside21 {
+    width: 400px;
+}
+
+#aside22 {
+    display: flex;
+    width: 550px;
+    justify-content: space-between;
+}
+
+#aside22 h3 {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.imgdiv img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+

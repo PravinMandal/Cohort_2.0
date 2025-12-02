@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+#box1 {
+    width: 30vw;
+    height: 30vh;
+    background-color: aqua;
+}
+
+#box2 {
+    width: 30vmax;
+    height: 30vmax;
+    background-color: brown;
+}
+
+#box3 {
+    width: 50vmin;
+    height: 50vmin;
+    background-color: bisque;
+    font-size: 30px;
+}
+
+h2 {
+    /* em depends on the parent font sizing usko zyada, kam krenge toh ye bhi hoga */
+    /* similarly "rem" wo root pr kaam krta hai and fixed size(1rem = 16px) ka hota hai */
+    font-size: 3em;
+}
+
+h4 {
+    font-size: 2em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+p {
+    font-size: 0.5em;
+}

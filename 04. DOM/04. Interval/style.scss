@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    
+    #card {
+        width: 400px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        p {
+            span {
+                color :rgb(19, 68, 216);
+            }
+        }
+
+        #bar {
+            width: 100%;
+            height: 25px;
+            background-color: rgb(185, 185, 185);
+            border-radius: 50px;
+
+            #completion {
+                height: 100%;
+                width: 0%;
+                background-color: aqua;
+                border-radius: 50px;
+            }
+        }
+
+        #bottom {
+            display: flex;
+            justify-content: space-between;
+            h2 {
+                font-size: 35px;
+            }
+            button {
+                padding: 10px 25px;
+                border-radius: 50px;
+                border: 1px solid black;
+                background-color: rgb(50, 172, 50);
+                cursor: pointer;
+            }
+            button:active {
+                scale: 0.95;
+            }
+        }
+    }
+}

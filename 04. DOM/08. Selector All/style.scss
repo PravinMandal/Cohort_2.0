@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    padding: 30px;
+
+    #box {
+        width: 30%;
+        padding: 40px;
+        background-color: rgb(60, 58, 58);
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .elem {
+            display: flex;
+            justify-content: space-between;
+            h2 {
+                font-size: 30px;
+            }
+            button {
+                font-size: 15px;
+                background-color: royalblue;
+                border-radius: 10px;
+                padding: 10px 15px;
+            }
+        }
+    }
+}

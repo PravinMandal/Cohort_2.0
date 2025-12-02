@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes borderAnimation {
+    from {
+        --rotate : 0deg;
+    }
+    to {
+        --rotate : 360deg;
+    }
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #box {
+        width: 400px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: whitesmoke;
+        flex-direction: column;
+        border: 0px solid rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 aqua;
+        text-shadow: 0 0 20px rgb(255, 215, 0);
+        border-radius: 1rem;
+        background: 
+        linear-gradient(black) padding-box,
+        conic-gradient(from var(--rotate), black,rgb(45, 174, 174), rgb(255, 215, 0), black) border-box
+        ;
+        animation: borderAnimation 4s linear infinite;
+        animation-play-state: paused;
+        transition: all 0.3s ease;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        h2, p {
+            padding-bottom: 5px;
+        }
+        h2 {
+            font-size: 30px;
+        }
+        p {
+            font-size: 20px;
+            padding-bottom: 20px;
+        }
+    }
+    #box:hover {
+        border-width: 5px;
+        animation-play-state: running;
+        color: rgb(33, 233, 233);
+        text-shadow: 0 0 10px rgb(243, 15, 72);
+        box-shadow: 0 0 80px rgb(255, 215, 0);
+    }
+}

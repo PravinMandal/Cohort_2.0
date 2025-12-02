@@ -1,0 +1,214 @@
+
+@font-face {
+    font-family: seb;
+    src: url(./Fonts/sf-pro-text_regular.woff2);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: seb;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+#nav {
+    height: 45px;
+    width: 100%;
+    background-color: #1D1D1F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+    
+}
+
+#nav h4 {
+    color: white;
+    font-weight: 80;
+    font-size: 13px;
+}
+
+#nav i {
+    font-size: large;
+}
+
+.center {
+    width: 100%;
+    height: 88%;
+    background-size: cover;
+    background-position: center;
+}
+
+.center h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    padding-top: 60px;
+}
+
+.center h3 {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    padding-top: 10px;
+    font-weight: 100px;
+}
+
+.center .btn {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.btn button{
+    padding: 13px 25px;
+    border-radius: 50px;
+    color: white;
+    font-size: 17px;
+}
+
+.cbtn1 {
+    border: none;
+    background-color: #0077ED;
+}
+
+.cbtn2 {
+    background-color: transparent;
+    border-width: 1.2px;
+    border-color: #0077ED;
+}
+
+
+#page1 {
+    background-color: black;
+    color: white;
+    background-image: url(https://www.apple.com/v/home/ch/images/heroes/iphone-17-pro/hero_iphone_17_pro__bknyzxfk2agi_mediumtall_2x.jpg);
+}
+
+.page {
+    width: 100%;
+    height: 700px;
+    background-color: #F5F5F7;
+}
+
+#page2 {
+    margin-top: 13px;
+    color: black;
+    background-image: url(https://www.apple.com/v/home/ch/images/heroes/iphone-air/hero_iphone_air__0gxyavihpiqu_mediumtall_2x.jpg);
+}
+
+#page3 {
+    margin-top: 13px;
+    background-image: url(https://www.apple.com/v/home/ch/images/heroes/iphone-17/hero_iphone_17__c5vvimu9a20y_mediumtall_2x.jpg);
+}
+
+#page4 {
+    display: flex;
+    height: 75%;
+    margin: 13px 13px;
+}
+
+#page5 {
+    display: flex;
+    height: 75%;
+    margin: 13px 13px;
+}
+
+#page6 {
+    display: flex;
+    height: 75%;
+    margin: 13px 13px;
+}
+
+.shortcenter {
+    width: 50%;
+    background-size: cover;
+    background-position: center; 
+    background-color: #F5F5F7;
+}
+
+.shortcenter h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 33px;
+    padding-top: 60px;
+}
+
+.shortcenter h3 {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    padding-top: 2px;
+    font-weight: 400;
+}
+
+.shortcenter .shortbtn {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.shortbtn button{
+    padding: 8px 18px;
+    border-radius: 50px;
+    color: white;
+    font-size: 13px;
+}
+
+.shortcbtn1 {
+    border: none;
+    background-color: #0077ED;
+}
+
+.shortcbtn2 {
+    background-color: transparent;
+    border-width: 1.2px;
+    border-color: #0077ED;
+}
+
+.watch {
+    font-weight: 1000;
+}
+
+.watch span {
+    font-weight: 200;
+    margin-left: 10px;
+}
+
+#pone {
+    background-image: url(https://www.apple.com/v/home/ch/images/promos/apple-watch-series-11/promo_apple_watch_series_11__b63hxviqvonm_medium_2x.jpg);
+}
+
+#ptwo {
+    background-image: url(https://www.apple.com/v/home/ch/images/promos/airpods-pro-3/promo_airpodspro_3__f6xmza7bglei_medium_2x.jpg);
+}
+
+#pthree {
+    background-image: url(https://www.apple.com/v/home/ch/images/promos/macbook-air/promo_macbook_air__fqowrtnxewqe_medium_2x.jpg);
+}
+
+#pfour {
+    background-image: url(https://www.apple.com/v/home/ch/images/promos/ipad-air/promo_ipad_air_avail__6i02t7nujr62_medium_2x.jpg);
+}
+
+#pfive {
+    background-image: url(https://www.apple.com/v/home/ch/images/promos/iphone-tradein/promo_iphone_tradein__bugw15ka691e_medium_2x.jpg);
+}
+
+#psix {
+    background-image: url(https://www.apple.com/v/home/ch/images/promos/apple-card/promo_apple_card__5cm7draujpey_medium_2x.jpg);
+}
+

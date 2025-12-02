@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin flex-column($gap : 0rem) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    color: white;
+    font-size: clamp(10px, 1vw, 18px);
+}
+
+body {
+    background-color: #121212;
+}
+
+section {
+    max-width: 2000px;
+}
+
+main {
+    width: 100%;
+    @include flex-column(0rem);
+    align-items: center;
+
+    section.view1 {
+        width: 100%;
+        @include flex-column(1rem);
+        padding: 1rem;
+        .top {
+            width: 100%;
+            img {
+                border-radius: 0.7rem;
+                width: 100%;
+            }
+        }
+
+        .bottom {
+            @include flex-column(4rem);
+            justify-content: space-between;
+            padding: 3rem;
+            border-radius: 0.7rem;
+            background-color: #1E1E1E;
+
+            .text {
+                @include flex-column(2rem);
+                width: 100%;
+                h1 {
+                    font-size: 3.5rem;
+                    font-weight: 100;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    font-size: 1.5rem;
+                    font-weight: 100;
+                    line-height: 1.5;
+                    opacity: 0.5;
+                }
+
+                button {
+                    width: fit-content;
+                    border: none;
+                    outline: none;
+                    padding: 0.5rem 0.8rem;
+                    border-radius: 0.5rem;
+                }
+            }
+        }
+    }
+
+    section.view2 {
+        @include flex-column(0.5rem);
+        width: 100%;
+        padding: 1rem;
+        .top, .bottom{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            .element {
+                text-align: center;
+
+                small {
+                    opacity: 0.6;
+                }
+    
+                h2 {
+                    font-size: 4rem;
+                    font-weight: 200;
+                }
+            }
+
+        }
+    }
+
+    section.view3, section.view4{
+        @include flex-column(1rem);
+        width: 100%;
+        padding: 1rem;
+
+        .top {
+            width: 100%;
+            img {
+                width: 100%;
+                border-radius: 0.7rem;
+            }
+        }
+        .bottom {
+            @include flex-column(4rem);
+            justify-content: space-between;
+            padding: 3rem;
+            border-radius: 0.7rem;
+            background-color: #1E1E1E;
+
+            .text {
+                @include flex-column(2rem);
+                width: 90%;
+                h1 {
+                    font-size: 3.5rem;
+                    font-weight: 100;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    font-size: 1.6rem;
+                    font-weight: 100;
+                    line-height: 1.5;
+                    opacity: 0.5;
+                }
+            }
+        }
+        .bottom>p {
+            text-transform: uppercase;
+        }
+    }
+
+    section.view5 {
+        @include flex-column(2rem);
+        width: 100%;
+        padding: 1rem;
+        .cards {
+            border-radius: 1rem;
+            width: 100%;
+            background-image: url(./assests/card1.png);
+            aspect-ratio: 1/1;
+            background-size: cover;
+
+            @include flex-column(0rem);
+            justify-content: space-between;
+            padding: 1rem;
+
+            .top, .bottom {
+                font-size: 1.5rem;
+                font-weight: 100;
+                display: flex;
+                padding: 2rem 1rem;
+            }
+
+            .top {
+                justify-content: flex-end;
+                gap: 1rem;
+                i {
+                    background-color: rgba(75, 73, 73, 0.382);
+                    backdrop-filter: blur(5px);
+                    padding: 1rem;
+                    border: 0.1px solid rgba(255, 255, 255, 0.21);
+                    border-radius: 50%;
+                }
+            }
+            .bottom {
+                justify-content: space-between;
+                text-align: center;
+                background-color: rgba(75, 73, 73, 0.382);
+                backdrop-filter: blur(5px);
+                border: 0.1px solid rgba(255, 255, 255, 0.21);
+                border-radius: 1rem;
+
+                p {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    section.view6 {
+        @include flex-column(1rem);
+        width: 100%;
+        padding: 1rem;
+
+        .top {
+            width: 100%;
+            img {
+                width: 100%;
+                border-radius: 0.7rem;
+            }
+        }
+        .bottom {
+            @include flex-column(4rem);
+            justify-content: space-between;
+            padding: 3rem;
+            border-radius: 0.7rem;
+            background-color: #1E1E1E;
+            gap: 9rem;
+
+            .text {
+                @include flex-column(2rem);
+                width: 90%;
+                p {
+                    font-size: 1.6rem;
+                    font-weight: 100;
+                    line-height: 1.5;
+                    opacity: 0.5;
+                }
+
+                h1 {
+                    font-size: 3.5rem;
+                    font-weight: 100;
+                    text-transform: uppercase;
+                }
+
+            }
+            button {
+                width: fit-content;
+                border: none;
+                outline: none;
+                padding: 0.5rem 0.8rem;
+                border-radius: 0.5rem;
+            }
+        }
+        .bottom>p {
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    main {
+        section.view1 {
+            flex-direction: row;
+            padding: 1rem 4rem;
+
+            .top, .bottom {
+                width: 50%;
+            }
+
+            .bottom {
+                justify-content: space-between;
+                padding: 3rem;
+
+                .text {
+                    gap: 1.5rem;
+                    h1 {
+                        font-size: 4rem;  
+                    }
+                }
+
+                p{
+                    width: 90%;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        section.view2 {
+            flex-direction: row;
+            padding: 1rem 4rem;
+        }
+
+        section.view3, section.view4 {
+            flex-direction: row-reverse;
+            padding: 1rem 4rem;
+
+            .top, .bottom {
+                width: 50%;
+            }
+
+            .bottom {
+                justify-content: space-between;
+                padding: 3rem;
+
+                .text {
+                    gap: 1.5rem;
+                    h1 {
+                        font-size: 3rem;  
+                    }
+                }
+
+                .paragraph {
+                    display: flex;
+                    gap: 2rem;
+                    p{
+                        width: 90%;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+        section.view4 {
+            flex-direction: row;
+            padding: 1rem 4rem;
+        }
+
+        section.view5 {
+            flex-direction: row;
+            padding: 1rem 4rem;
+        }
+
+        section.view6 {
+            flex-direction: row;
+            padding: 1rem 4rem;
+        }
+    }
+}

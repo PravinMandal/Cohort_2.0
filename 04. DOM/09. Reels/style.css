@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to right, black, rgb(53, 52, 52) 50%, black);
+  padding: 30px;
+  color: white;
+}
+main section {
+  height: 92vh;
+  width: 400px;
+  margin: auto;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+main section::-webkit-scrollbar {
+  display: none;
+}
+main section .box {
+  scroll-snap-align: start;
+  height: 90vh;
+  width: 100%;
+  border-radius: 15px;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+main section .box .mute {
+  height: 40px;
+  width: 40px;
+  background-color: rgba(57, 56, 56, 0.586);
+  -webkit-backdrop-filter: blur;
+          backdrop-filter: blur;
+  z-index: 10;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main section .box .mute i {
+  pointer-events: none;
+}
+main section .box .mute:active {
+  scale: 0.95;
+}
+main section .box video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main section .box .bottom {
+  width: 100%;
+  position: absolute;
+  margin: 10px;
+  bottom: 0;
+}
+main section .box .bottom .userdetail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main section .box .bottom .userdetail img {
+  height: 40px;
+  width: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+main section .box .bottom .userdetail h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+main section .box .bottom .userdetail button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+main section .box .bottom .caption {
+  margin-top: 5px;
+  width: 80%;
+  margin-left: 15px;
+}
+main section .box .bottom .caption h3 {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.812);
+}
+main section .box .right {
+  position: absolute;
+  padding: 15px;
+  right: 0;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 30px;
+  font-weight: 500;
+}
+main section .box .right .like, main section .box .right .comment, main section .box .right .share, main section .box .right .more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 50px;
+}
+main section .box .right .like h4, main section .box .right .comment h4, main section .box .right .share h4, main section .box .right .more h4 {
+  font-size: 15px;
+  font-weight: 500;
+}
+main section .box .right .like i, main section .box .right .like h4, main section .box .right .comment i, main section .box .right .comment h4, main section .box .right .share i, main section .box .right .share h4, main section .box .right .more i, main section .box .right .more h4 {
+  pointer-events: none;
+}/*# sourceMappingURL=style.css.map */
