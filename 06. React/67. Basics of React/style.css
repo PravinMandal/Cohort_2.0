@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+body #box {
+  height: 200px;
+  width: 200px;
+  background-color: crimson;
+}
+body #circle {
+  height: 200px;
+  width: 200px;
+  background-color: navy;
+  border-radius: 50%;
+}/*# sourceMappingURL=style.css.map */
