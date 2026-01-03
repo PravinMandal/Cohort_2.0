@@ -10,6 +10,21 @@ html, body {
     background-color: #0F0F0F;
 }
 
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes borderAnimation {
+    from {
+        --rotate : 0deg;
+    }
+    to {
+        --rotate : 360deg;
+    }
+}
+
 main {
     width: 100%;
     color: white;
@@ -62,8 +77,10 @@ main {
             gap: 3rem;
             #create {
                 display: flex;
+                justify-content: space-between;
+                gap: 0.2rem;
                 background-color: #1b1b1b;
-                padding: 0.8rem 1.7rem;
+                padding: 0.8rem 1.5rem;
                 border-radius: 50px;
             }
             #acc {
@@ -86,10 +103,43 @@ main {
         flex-wrap: wrap;
         gap: 4rem;
         .cards {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
             width: 25rem;
-            height: 35rem;
+            height: 42rem;
             border-radius: 2rem;
-            background-color: crimson;
+            border: 0px solid rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 aqua;
+            background: linear-gradient(black) padding-box,
+            conic-gradient(from var(--rotate), black, rgb(181, 2, 181), rgb(255, 215, 0), rgb(45, 174, 174), black) border-box;
+            animation: borderAnimation 4s linear infinite;
+            animation-play-state: paused;
+            transition: all 0.3s ease;
+            img {
+                width: 90%;
+
+            }
+
+            #info {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                align-items: center;
+                padding: 2rem;
+                .category {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+        .cards:hover {
+            border-width: 5px;
+            animation-play-state: running;
+            box-shadow: 0 0 80px rgb(57, 199, 212);
         }
     }
 }
