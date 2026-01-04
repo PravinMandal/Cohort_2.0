@@ -111,14 +111,16 @@ main {
             height: 42rem;
             border-radius: 2rem;
             border: 0px solid rgba(0, 0, 0, 0);
-            box-shadow: 0 0 0 aqua;
-            background: linear-gradient(black) padding-box,
+            box-shadow: 0 0 0 rgb(203, 17, 224);
+            background: linear-gradient(rgb(0, 0, 0)) padding-box,
             conic-gradient(from var(--rotate), black, rgb(181, 2, 181), rgb(255, 215, 0), rgb(45, 174, 174), black) border-box;
             animation: borderAnimation 4s linear infinite;
             animation-play-state: paused;
             transition: all 0.3s ease;
             img {
-                width: 90%;
+                width: 100%;
+                height: 80%;
+                object-fit: contain;
 
             }
 
