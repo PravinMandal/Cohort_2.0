@@ -1,7 +1,6 @@
 import React from "react";
 import Cards from "./components/Cards";
 
-// ✅ IMPORT IMAGES HERE
 import img1 from "./assets/01_img.png";
 import img2 from "./assets/02_img.png";
 import img3 from "./assets/03_img.png";
