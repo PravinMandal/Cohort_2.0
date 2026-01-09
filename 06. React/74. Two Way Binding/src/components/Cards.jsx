@@ -9,21 +9,28 @@ import img7 from "../assets/07_img.png";
 import img8 from "../assets/08_img.png";
 import img9 from "../assets/09_img.png";
 
-const Cards = ({ name, email, role, desc, index }) => {
+const Cards = ({id, name, email, role, desc, imageIndex, removeHandler }) => {
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
   return (
     <div
       className="
-        flex flex-col justify-end w-[20%] h-100 text-white font-sans
+        flex flex-col justify-between w-[20%] h-100 text-white font-sans
         border-5 border-[rgba(73,70,70,0.28)] 
         rounded-4xl overflow-hidden
-        
+        group relative
         bg-cover
         bg-clip-padding
         backdrop-blur
       "
-      style={{ backgroundImage: `url(${images[index % images.length]})` }}
+      style={{ backgroundImage: `url(${images[imageIndex]})` }}
     >
+      <div className="flex items-center justify-end w-full opacity-0 group-hover:opacity-100">
+        <button onClick={()=> {
+          removeHandler(id);
+        }} className="flex justify-center items-center active:scale-95 m-3 w-6 h-6 rounded-xl bg-[rgba(25,25,25,0.6)]">
+            <i className="ri-close-line text-white"></i>
+        </button>
+      </div>
       <div
         className="
           flex flex-col gap-1 w-full pt-15 p-5
@@ -41,8 +48,8 @@ const Cards = ({ name, email, role, desc, index }) => {
         </h1>
 
         <h3 className=" text-sm">{role}</h3>
-        {/* <h3 className="font-extralight text-xs">{desc}</h3> */}
-        <h3 className="font-extralight"><i class="ri-mail-line text-sm pr-2"></i>{email}</h3>
+        <h3 className="font-extralight text-xs">{desc}</h3>
+        <h3 className="font-extralight"><i className="ri-mail-line text-sm pr-2"></i>{email}</h3>
       </div>
     </div>
   );

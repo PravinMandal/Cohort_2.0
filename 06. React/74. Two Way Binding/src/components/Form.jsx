@@ -10,16 +10,18 @@ const Form = () => {
 
     const submitHandler = (e)=> {
         e.preventDefault();
-        setallUsers([...allUsers, {name, email, role, desc}]);
+        setallUsers([...allUsers, {id: crypto.randomUUID() ,name, email, role, desc, imageIndex : Math.floor(Math.random() * 9)}]);
         setName('');
         setEmail('');
         setrole('');
         setdesc('');
     }
 
-    useEffect(()=> {
-        console.log(allUsers)
-    }, [allUsers])
+    const removeHandler = (id)=> {
+        setallUsers(allUsers.filter((user)=> {
+            return user.id !== id
+        }))
+    }
          
   return (
     <div className="flex flex-col p-10 gap-20">
@@ -77,7 +79,7 @@ const Form = () => {
         
         <div className="flex justify-center flex-wrap gap-40">
             {allUsers.map((elem, idx)=> {
-                return <Cards key={idx} {...elem} index={idx} />
+                return <Cards key={elem.id} {...elem} removeHandler={removeHandler} />
             })}
         </div>
     </div>
