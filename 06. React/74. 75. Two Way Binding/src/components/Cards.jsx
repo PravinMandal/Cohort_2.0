@@ -17,6 +17,8 @@ const Cards = ({id, name, email, role, desc, imageIndex, removeHandler }) => {
         flex flex-col justify-between w-[20%] h-100 text-white font-sans
         border-5 border-[rgba(73,70,70,0.28)] 
         rounded-4xl overflow-hidden
+        transition-all duration-300 ease-in-out
+        hover:scale-[1.02]
         group relative
         bg-cover
         bg-clip-padding
@@ -27,7 +29,7 @@ const Cards = ({id, name, email, role, desc, imageIndex, removeHandler }) => {
       <div className="flex items-center justify-end w-full opacity-0 group-hover:opacity-100">
         <button onClick={()=> {
           removeHandler(id);
-        }} className="flex justify-center items-center active:scale-95 m-3 w-6 h-6 rounded-xl bg-[rgba(25,25,25,0.6)]">
+        }} className="flex justify-center items-center active:scale-95 m-3 w-6 h-6 rounded-xl bg-[rgba(56,55,55,0.6)]">
             <i className="ri-close-line text-white"></i>
         </button>
       </div>
