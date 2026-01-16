@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.Nav {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+.Nav a {
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+h1 {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  font-size: 90px;
+}
+
+h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+}
+
+.sale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  background-color: rgb(171, 23, 23);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  background-color: rgb(45, 44, 44);
+  padding: 40px 20px;
+}
+
+.footer button {
+  background-color: aquamarine;
+  padding: 10px 20px;
+}
