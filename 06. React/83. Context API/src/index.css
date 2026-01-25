@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.nav {
+  padding: 2rem;
+  background-color: darkcyan;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sec {
+  padding: 2rem;
+  background-color: aquamarine;
+}
+
+.foot {
+  padding: 2rem;
+  background-color: brown;
+}

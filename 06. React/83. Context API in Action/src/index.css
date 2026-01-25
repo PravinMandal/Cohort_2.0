@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.allproducts {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: white;
+  background-color: black;
+}
+.allproducts a {
+  text-decoration: none;
+}
+.allproducts a .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(50, 48, 48);
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+.allproducts a .product img {
+  height: 200px;
+  -o-object-position: top;
+     object-position: top;
+}
+.allproducts a .product h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.home {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.home h1 {
+  font-size: 5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.home button {
+  padding: 10px 25px;
+  background-color: lightseagreen;
+  border-radius: 1rem;
+  color: white;
+  font-size: 1rem;
+}/*# sourceMappingURL=index.css.map */
