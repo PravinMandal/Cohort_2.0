@@ -6,21 +6,28 @@ const notes = [];
 
 app.post("/notes", (req, res) => {
   notes.push(req.body);
-  res.send("notes created successfully");
+  res.status(201).json({
+    message: "Note created successfully",
+  });
 });
 
 app.get("/notes", (req, res) => {
-  res.send(notes);
+  res.status(200).json({
+    note: notes,
+  });
 });
 
 app.delete("/notes/:index", (req, res) => {
   delete notes[req.params.index];
-  res.send("note deleted successfully");
+  res.status(204).json({
+    message: "Note deleted successfully",
+  });
 });
 
 app.patch("/notes/:index", (req, res) => {
   notes[req.params.index].description = req.body.description;
-  res.send("note patched successfully");
+  res.status(200).json({
+    message: "Note updated successfully"
+  })
 });
-
 module.exports = app;
