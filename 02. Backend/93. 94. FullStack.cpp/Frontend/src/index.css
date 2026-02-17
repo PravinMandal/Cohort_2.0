@@ -17,6 +17,7 @@ html {
 
 .notes {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   padding: 1rem 2rem;
 }
@@ -25,4 +26,11 @@ html {
   background-color: rgb(74, 74, 74);
   padding: 1rem 2rem;
   border-radius: 1rem;
+}
+
+.note-create-form {
+  display: flex;
+  gap: 2rem;
+  padding-inline: 3rem;
+  padding-block: 1rem;
 }
