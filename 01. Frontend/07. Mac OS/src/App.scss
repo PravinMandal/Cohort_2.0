@@ -1,0 +1,16 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html, body, #root, main {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+    background-image: url(../public/wallpapers/wallpaper2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
