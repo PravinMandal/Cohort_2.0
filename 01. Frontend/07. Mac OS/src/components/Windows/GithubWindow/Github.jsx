@@ -1,7 +1,7 @@
 import React from 'react'
-import MacWindow from "./MacWindow"
+import MacWindow from "../MacWindow/MacWindow"
 import "./Github.scss"
-import ProjectData from "../../assets/github.json"
+import ProjectData from "../../../assets/github.json"
 
 const MakeCards = ({id, image, title, description, tags, repoLink, demoLink})=> {
     return (

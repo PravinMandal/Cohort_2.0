@@ -46,4 +46,15 @@
     .main-children {
         height: 100%;
     }
+
+    *::-webkit-scrollbar {
+        width: 8px;
+    }
+    *::-webkit-scrollbar-thumb {
+        background-color: rgb(74, 74, 74);
+        border-radius: 4px;
+    }
+}
+.window:hover {
+    cursor: default;
 }

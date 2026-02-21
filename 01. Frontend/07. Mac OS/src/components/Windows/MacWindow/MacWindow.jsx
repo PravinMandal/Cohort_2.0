@@ -5,7 +5,7 @@ import {Rnd} from 'react-rnd'
 const MacWindow = ({children}) => {
   return (
     <div className="macwindow-wrapper">
-        <Rnd bounds="window" default={{ x: 350 , y: 50, width: "55vw", height: "70vh" }}>
+        <Rnd default={{ x: 350 , y: 50, width: "55vw", height: "70vh" }}>
             <div className="window">
                 <div className="nav">
                     <div className="dots">

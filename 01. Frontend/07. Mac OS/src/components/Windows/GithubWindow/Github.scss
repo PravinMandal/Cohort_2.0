@@ -3,9 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     overflow: scroll;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    
     justify-content: center;
     gap: 2rem;
     padding-bottom: 5rem;

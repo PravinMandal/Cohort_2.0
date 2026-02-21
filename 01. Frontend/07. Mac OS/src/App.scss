@@ -7,17 +7,14 @@ html, body, #root, main {
   height: 100%;
   width: 100%;
 }
-html, body, #root {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
+
 
 main {
-    position: relative;
-    background-image: url(wallpapers/wallpaper2.png);
-    color: white;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url(wallpapers/wallpaper2.png);
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
 }

@@ -1,0 +1,126 @@
+/**
+ * @file: profile.config.ts
+ * @author: Pravin Mandal
+ * @summary: DSA-focused engineer with growing frontend & React experience.
+ */
+
+// --------------------------------------------------
+// 1. CORE SKILLS & TECH STACK
+// --------------------------------------------------
+
+const TECH_STACK = {
+  programming: [
+    "C++",          // Strong (DSA-focused)
+    "JavaScript",   // Intermediate
+  ],
+  frontend: [
+    "HTML5",        // Strong
+    "CSS3",         // Strong (Responsive Design)
+    "JavaScript",   // DOM Manipulation (Learning)
+    "React.js",     // Beginner–Intermediate (Component-based UI)
+  ],
+  cs_fundamentals: [
+    "Data Structures & Algorithms",
+    "Object-Oriented Programming",
+    "Basic OS Concepts",
+  ],
+  tools: [
+    "Git",
+    "GitHub",
+    "VS Code",
+  ]
+};
+
+// --------------------------------------------------
+// 2. PROJECT EXPERIENCE (Hands-on)
+// --------------------------------------------------
+
+class ProjectExperience {
+
+  /** 
+   * FRONTEND PROJECTS
+   * @type Personal Projects
+   */
+  public FrontendProjects(): string[] {
+    return [
+      "Built multiple responsive websites using HTML, CSS, JavaScript",
+      "Developed React-based UI with reusable components (DVSY)",
+      "Implemented DOM events & audio handling (Virtual Piano)",
+      "Deployed projects using GitHub Pages and Vercel"
+    ];
+  }
+
+  /**
+   * PROBLEM SOLVING
+   */
+  public ProblemSolving(): Record<string, number> {
+    return {
+      LeetCode_GFG_Total: 350, // Approx.
+      Core_Topics: [
+        "Arrays",
+        "Stacks & Queues",
+        "Linked Lists",
+        "Heaps",
+        "Trees",
+        "Graphs",
+        "Recursion & Basics of DP"
+      ].length
+    };
+  }
+}
+
+// --------------------------------------------------
+// 3. ACHIEVEMENTS & ACTIVITIES
+// --------------------------------------------------
+
+interface Achievement {
+  title: string;
+  level: string;
+}
+
+const achievements: Achievement[] = [
+  {
+    title: "1st Place – Debugging Competition",
+    level: "College Level",
+  },
+  {
+    title: "2nd Place – Coding (DSA) Competition",
+    level: "College Level",
+  },
+  {
+    title: "Smart India Hackathon (Internal Selection)",
+    level: "2024 & 2025",
+  }
+];
+
+// --------------------------------------------------
+// 4. ACADEMIC PROFILE
+// --------------------------------------------------
+
+const education = {
+  degree: "B.E. Artificial Intelligence & Data Science",
+  year: "3rd Year",
+  institution: "Ajeenkya D.Y. Patil School of Engineering",
+  performance: "GPA: 8.2"
+};
+
+// --------------------------------------------------
+// 5. CURRENT FOCUS
+// --------------------------------------------------
+
+const CURRENT_FOCUS = [
+  "Advanced JavaScript",
+  "DOM Manipulation",
+  "React Fundamentals",
+  "Writing clean & efficient code",
+  "Improving problem-solving speed"
+];
+
+export default new ProjectExperience();
+
+
+/*
+----------------------------------------
+ TERMINAL OUTPUT
+----------------------------------------
+*/
