@@ -1,47 +1,65 @@
 [
   {
     "id": 1,
-    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1000",
-    "title": "Scheds - A Course Schedule Generator",
-    "description": "My proudest project yet, a comprehensive course schedule generator application built with ASP.NET Core MVC.",
-    "tags": ["ASP.NET Core", "C#", "Entity Framework", "SQL Server", "Bootstrap", "jQuery"],
-    "repoLink": "https://github.com/microsoft/dotnet",
-    "demoLink": "https://dotnet.microsoft.com/"
+    "image": "./project-images/DVSY.png",
+    "title": "DVSY",
+    "description": "A modern web application or landing page deployed on Vercel.",
+    "tags": ["React", "JavaScript", "CSS", "Vercel"],
+    "repoLink": "https://github.com/PravinMandal/DVSY",
+    "demoLink": "https://dvsy-one.vercel.app/"
   },
   {
     "id": 2,
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
-    "title": "FinTrack - Personal Finance Dashboard",
-    "description": "A real-time finance tracker that visualizes spending habits using interactive charts and connects to banking APIs.",
-    "tags": ["React", "TypeScript", "Chart.js", "Node.js", "Express", "MongoDB"],
-    "repoLink": "https://github.com/facebook/react",
-    "demoLink": "https://react.dev/"
+    "image": "./project-images/Horizon_Courts.png",
+    "title": "Horizon Courts",
+    "description": "A frontend web application deployed on Vercel, likely featuring a user interface for courts or a related business.",
+    "tags": ["React", "Tailwind CSS", "Vercel"],
+    "repoLink": "https://github.com/PravinMandal/Horizon_Courts",
+    "demoLink": "https://horizon-courts-azure.vercel.app/"
   },
   {
     "id": 3,
-    "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=1000",
-    "title": "SecureAuth - Backend Identity Service",
-    "description": "A robust backend authentication microservice featuring JWT implementation, role-based access control, and OAuth2 integration.",
-    "tags": ["Python", "Django", "PostgreSQL", "Docker", "Redis", "JWT"],
-    "repoLink": "https://github.com/django/django",
-    "demoLink": null
+    "image": "./project-images/Pokedex.png",
+    "title": "PokeDex",
+    "description": "An interactive PokeDex application that fetches and displays Pokémon data using an external API.",
+    "tags": ["React","JavaScript", "HTML", "CSS", "API Integration"],
+    "repoLink": "https://github.com/PravinMandal/PokeDex",
+    "demoLink": "https://poke-dex-weld.vercel.app/"
   },
   {
     "id": 4,
-    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1000",
-    "title": "ChatStream - Real-time Messaging App",
-    "description": "A lightweight chat application allowing users to create rooms and message instantly. Optimized for low latency communication.",
-    "tags": ["Vue.js", "Firebase", "Tailwind CSS", "Socket.io"],
-    "repoLink": "https://github.com/vuejs/core",
-    "demoLink": "https://vuejs.org/"
+    "image": "./project-images/virtual_Piano.png",
+    "title": "Virtual Piano",
+    "description": "A browser-based interactive virtual piano that allows users to play musical notes using their keyboard or mouse.",
+    "tags": ["HTML", "CSS", "Vanilla JavaScript", "Audio API"],
+    "repoLink": "https://github.com/PravinMandal/Virtual_Piano",
+    "demoLink": "https://pravinmandal.github.io/Virtual_Piano/"
   },
   {
     "id": 5,
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000",
-    "title": "TerminalX - CLI Productivity Tool",
-    "description": "A command-line interface tool built to automate repetitive developer tasks and manage local environments efficiently.",
-    "tags": ["Rust", "Clap", "Tokio", "System API"],
-    "repoLink": "https://github.com/rust-lang/rust",
-    "demoLink": null
+    "image": "./project-images/Studio.png",
+    "title": "Studio Responsive",
+    "description": "A fully responsive landing page for a creative studio, focusing on modern UI design and mobile compatibility.",
+    "tags": ["HTML5", "CSS3", "Responsive Design", "JavaScript"],
+    "repoLink": "https://github.com/PravinMandal/Studio_Responsive",
+    "demoLink": "https://pravinmandal.github.io/Studio_Responsive/"
+  },
+  {
+    "id": 6,
+    "image": "./project-images/Flutter.png",
+    "title": "Flutter Landing Page",
+    "description": "A responsive landing page clone or showcase inspired by Flutter's official design, built for the web.",
+    "tags": ["HTML", "CSS", "JavaScript", "UI/UX"],
+    "repoLink": "https://github.com/PravinMandal/Flutter_Landing_Page",
+    "demoLink": "https://pravinmandal.github.io/Flutter_Landing_Page/"
+  },
+  {
+    "id": 7,
+    "image": "./project-images/Dribbble.png",
+    "title": "Dribbble Landing Page",
+    "description": "A responsive frontend clone of the Dribbble landing page, focusing on grid layouts and visual presentation.",
+    "tags": ["HTML", "CSS", "Flexbox", "CSS Grid"],
+    "repoLink": "https://github.com/PravinMandal/Dribbble_Landing_Page",
+    "demoLink": "https://pravinmandal.github.io/Dribbble_Landing_Page/"
   }
 ]
