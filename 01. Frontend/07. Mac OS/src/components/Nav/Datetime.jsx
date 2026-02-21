@@ -15,7 +15,7 @@ const Datetime = () => {
       const hours = String(now.getHours()).padStart(2, '0')
       const minutes = String(now.getMinutes()).padStart(2, '0')
       
-      setDateTime(`${dayName} ${monthName} ${day}\u00A0\u00A0\u00A0${hours}:${minutes}`)
+      setDateTime(`${dayName} ${monthName} ${day}\u00A0\u00A0${hours}:${minutes}`)
     }
 
     updateDateTime()

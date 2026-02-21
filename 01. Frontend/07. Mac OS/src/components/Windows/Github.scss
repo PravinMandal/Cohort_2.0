@@ -1,0 +1,60 @@
+.cards {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 5rem;
+    padding-top: 1rem;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        max-width: 22rem;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: rgb(29, 29, 29);
+        img {
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 1.5rem;
+        }
+        h3 {
+            font-size: 1rem;
+            opacity: 0.75;
+            font-weight: 400;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            white-space: nowrap;
+            .tag {
+                width: fit-content;
+                background-color: rgb(72, 72, 72);
+                padding-inline: 0.5rem;
+                padding-block: 0.25rem;
+                border-radius: 0.3rem;
+            }
+        }
+        .projectLinks {
+            display: flex;
+            gap: 2rem;
+            a {
+                width: fit-content;
+                color: white;
+                background-color: rgb(72, 86, 85);
+                padding-inline: 0.5rem;
+                padding-block: 0.25rem;
+                border-radius: 0.3rem;
+            }
+        }
+    }
+}

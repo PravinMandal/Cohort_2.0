@@ -6,13 +6,12 @@
     transform: translateX(-50%);
     background-color: rgba(94, 94, 94, 0.163);
     padding-inline: 1rem;
-    padding-block: 0.5rem;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(2px);
     border: 1px solid rgba(154, 154, 154, 0.479);
     border-radius: 0.75rem;
-
+    
     .icon {
         display: flex;
         justify-content: center;
@@ -20,11 +19,12 @@
         aspect-ratio: 1/1;
         width: 3rem;
         border-radius: 1rem;
+        transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
     }
     
     .icons {
         padding-inline: 0.5rem;
-        transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        padding-block: 0.5rem;
     }
 
     .github, .cli {
@@ -34,23 +34,23 @@
         background: linear-gradient(to bottom, rgb(255, 200, 0), rgb(255, 174, 0));
     }
     .pdf {
-        background: linear-gradient(to bottom, rgb(255, 25, 25), red);
+        background: linear-gradient(to bottom, rgb(255, 0, 0), rgba(201, 0, 0, 0.696));
     }
     .calendar, .mail {
         background: linear-gradient(to bottom, rgb(105, 94, 255), rgb(66, 52, 255));
     }
     .spotify {
-        background: linear-gradient(to bottom, rgb(0, 246, 0), rgb(0, 187, 0));
+        background: linear-gradient(to bottom, rgb(0, 246, 0), rgb(0, 158, 0));
     }
     .link {
         background: linear-gradient(to bottom, rgb(170, 0, 255), rgb(137, 2, 205));
     }
 
-    .icons:hover {
+    .icons:hover .icon{
         scale: 1.35;
         transform: translateY(-35%);
     }
-    .icons:hover + .icons, .icons:has( + .icons:hover) {
+    .icons:hover + .icons .icon, .icons:has( + .icons:hover) .icon {
         scale: 1.15;
         transform: translateY(-15%);
     }
