@@ -1,27 +1,27 @@
 import React from 'react'
 import "./Dock.scss"
 
-const Dock = ({windowState, setWindowState}) => {
+const Dock = ({windowState, setWindowState, setActiveWindow}) => {
   return (
     <footer className="dock">
         <div className="icons">
           <div 
-            onClick={()=> {setWindowState((state)=> ({...state, note : true}))}}
+            onClick={()=> {setWindowState((state)=> ({...state, note : true})); setActiveWindow('note')}}
             className="notes icon"><img src="/icons/note.svg" alt="" /></div>
         </div>
         <div className="icons">
           <div 
-            onClick={()=> {setWindowState((state)=> ({...state, resume : true}))}}
+            onClick={()=> {setWindowState((state)=> ({...state, resume : true})); setActiveWindow('resume')}}
             className="pdf icon"><img src="/icons/pdf.svg" alt="" /></div>
         </div>
         <div className="icons">
           <div 
-            onClick={()=> {setWindowState((state)=>({...state, github : true}))}}
+            onClick={()=> {setWindowState((state)=>({...state, github : true})); setActiveWindow('github')}}
             className="github icon"><img src="/icons/github.svg" alt="" /></div>
         </div>
         <div className="icons">
           <div 
-            onClick={()=> {setWindowState((state)=> ({...state, spotify : true}))}}
+            onClick={()=> {setWindowState((state)=> ({...state, spotify : true})); setActiveWindow('spotify')}}
             className="spotify icon"><img src="/icons/spotify.svg" alt="" /></div>
         </div>
         <div className="icons">
@@ -31,7 +31,7 @@ const Dock = ({windowState, setWindowState}) => {
         </div>
         <div className="icons">
           <div 
-            onClick={()=> {setWindowState((state)=> ({...state, cli : true}))}}
+            onClick={()=> {setWindowState((state)=> ({...state, cli : true})); setActiveWindow('cli')}}
             className="cli icon"><img src="/icons/cli.svg" alt="" /></div>
         </div>
         <div className="icons">

@@ -2,9 +2,9 @@ import React from 'react'
 import MacWindow from "../MacWindow/MacWindow"
 import "./Spotify.scss"
 
-const Spotify = ({windowName, setWindowState}) => {
+const Spotify = ({windowName, setWindowState, activeWindow, setActiveWindow}) => {
   return (
-    <MacWindow width='40vw' height='60vh' windowName={windowName} setWindowState={setWindowState} x={400} y={70}>
+    <MacWindow width='40vw' height='60vh' windowName={windowName} setWindowState={setWindowState} activeWindow={activeWindow} setActiveWindow={setActiveWindow} x={400} y={70}>
         <div className="spotify-window">
             <iframe data-testid="embed-iframe" style={{borderRadius: '12px'}}
                 src="https://open.spotify.com/embed/playlist/2fwmGQAXgrf1JwM6KNCzq4?utm_source=generator&theme=0" 

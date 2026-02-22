@@ -2,9 +2,10 @@ import React from 'react'
 import "./MacWindow.scss"
 import {Rnd} from 'react-rnd'
 
-const MacWindow = ({children, width="55vw", height="70vh", windowName, setWindowState, x, y}) => {
+const MacWindow = ({children, width="55vw", height="70vh", windowName, setWindowState, x, y, activeWindow, setActiveWindow}) => {
+  const isActive = activeWindow === windowName
   return (
-    <div className="macwindow-wrapper">
+    <div className="macwindow-wrapper" style={{ zIndex: isActive ? 1000 : 100 }} onMouseDown={() => setActiveWindow(windowName)}>
         <Rnd default={{ x: x , y: y, width: width, height: height }}>
             <div className="window">
                 <div className="nav">
