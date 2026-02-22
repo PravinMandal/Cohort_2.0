@@ -2,14 +2,14 @@ import React from 'react'
 import "./MacWindow.scss"
 import {Rnd} from 'react-rnd'
 
-const MacWindow = ({children}) => {
+const MacWindow = ({children, width="55vw", height="70vh", windowName, setWindowState, x, y}) => {
   return (
     <div className="macwindow-wrapper">
-        <Rnd default={{ x: 350 , y: 50, width: "55vw", height: "70vh" }}>
+        <Rnd default={{ x: x , y: y, width: width, height: height }}>
             <div className="window">
                 <div className="nav">
                     <div className="dots">
-                        <div className="dot red"></div>
+                        <div onClick={()=> {setWindowState((state)=> ({...state, [windowName] : false}))}} className="dot red"></div>
                         <div className="dot yellow"></div>
                         <div className="dot green"></div>
                     </div>

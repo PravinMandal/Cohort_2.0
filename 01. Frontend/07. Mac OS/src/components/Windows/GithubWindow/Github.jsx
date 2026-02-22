@@ -20,10 +20,10 @@ const MakeCards = ({id, image, title, description, tags, repoLink, demoLink})=> 
     )
 }
 
-const Github = () => {
+const Github = ({windowName, setWindowState}) => {
   return (
     <div>
-        <MacWindow>
+        <MacWindow windowName={windowName} setWindowState={setWindowState} x={30} y={30}>
             <div className="cards">
                 {ProjectData.map((oneCardData)=> {
                     return <MakeCards {...oneCardData} />
