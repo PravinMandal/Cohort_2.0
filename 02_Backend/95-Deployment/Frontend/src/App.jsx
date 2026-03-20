@@ -8,7 +8,7 @@ const App = () => {
   const [EditDescription, setEditDescription] = useState("")
 
   function getSetData() {
-    axios.get("http://localhost:3000/notes")
+    axios.get("https://cohort-2-0-mxy7.onrender.com/notes")
     .then((res)=> {
       setnotes(res.data.allnote)
     })
@@ -17,7 +17,7 @@ const App = () => {
   function createNote(e) {
     e.preventDefault()
     const {title, description} = e.target.elements
-    axios.post("http://localhost:3000/notes",{
+    axios.post("https://cohort-2-0-mxy7.onrender.com/notes",{
       title : title.value,
       description : description.value
     }).then(()=> {
@@ -26,14 +26,14 @@ const App = () => {
   }
 
   function handleDeleteNote(noteId) {
-    axios.delete("http://localhost:3000/notes/"+noteId)
+    axios.delete("https://cohort-2-0-mxy7.onrender.com/notes/"+noteId)
     .then(()=> {
       getSetData();
     })
   }
 
   function handleEditNotes(noteId, description) {
-    axios.patch("http://localhost:3000/notes/"+noteId, {
+    axios.patch("https://cohort-2-0-mxy7.onrender.com/notes/"+noteId, {
       description : description
     })
     .then(()=> {
