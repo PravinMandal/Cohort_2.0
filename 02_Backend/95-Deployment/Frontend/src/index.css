@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  background-color: rgb(29, 29, 29);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+
+.note {
+  background-color: rgb(74, 74, 74);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.note-create-form {
+  display: flex;
+  gap: 2rem;
+  padding-inline: 3rem;
+  padding-block: 1rem;
+}
