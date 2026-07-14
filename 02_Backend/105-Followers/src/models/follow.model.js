@@ -4,7 +4,7 @@ const followSchema = new mongoose.Schema({
     follower : {
         type : mongoose.Schema.Types.ObjectId,
         ref : users,
-        required : [true, "Follwer is required to follow someone"]
+        required : [true, "Follower is required to follow someone"]
     },
     followee : {
         type : mongoose.Schema.Types.ObjectId,

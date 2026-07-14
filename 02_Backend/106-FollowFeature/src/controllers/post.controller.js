@@ -1,0 +1,94 @@
+const ImageKit = require("@imagekit/nodejs")
+const jwt = require("jsonwebtoken");
+const postModel = require("../models/post.model");
+const likeModel = require("../models/like.model");
+
+const client = new ImageKit({
+  privateKey: process.env['IMAGEKIT_PRIVATE_KEY'], // This is the default and can be omitted
+});
+
+async function createPostController(req, res) {
+
+    const file = await client.files.upload({
+        file: await ImageKit.toFile(Buffer.from(req.file.buffer), 'file'),
+        fileName: 'fileName',
+    });
+
+    const post = await postModel.create({
+        caption : req.body.caption,
+        imgUrl : file.url,
+        user : req.user.id
+    })
+
+    res.status(201).json({
+        message : "Post successfully created", 
+        post
+    })
+}
+
+async function getPostController(req, res) {
+
+    const posts = await postModel.find({
+        user : req.user.id
+    })
+
+    res.status(200).json({
+        message : "All Post successfully Fetched",
+        posts
+    })
+}
+
+async function getPostDetailsController(req, res) {
+
+    const user = req.user.id
+    const postId = req.params.postId
+
+    const post = await postModel.findById(postId)
+
+    if(!post) {
+        return res.status(404).json({
+            message : "Post unavailable"
+        })
+    }
+
+    const isValidUser = post.user.toString() === user
+
+    if(!isValidUser) {
+        return res.status(401).json({
+            message : "Unauthorized Access"
+        })
+    }
+
+    res.status(200).json({
+        message : "Post successfully Fetched",
+        post
+    })
+}
+
+async function likePostController(req, res) {
+    const username = req.user.username
+    const postId = req.params.postId
+
+    const post = await postModel.findById(postId)
+
+    if(!post) {
+        return res.status(404).json({
+            message : "Post not found"
+        })
+    }
+
+    const like = await likeModel.create({
+        post : postId,
+        user : username
+    })
+
+    res.status(201).json({
+        message : "Post liked successfully",
+        like
+    })
+
+}
+
+module.exports = {
+    createPostController, getPostController, getPostDetailsController, likePostController
+}
