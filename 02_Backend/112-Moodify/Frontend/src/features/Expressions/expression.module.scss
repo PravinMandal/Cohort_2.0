@@ -1,0 +1,351 @@
+﻿// ── Mixins ──
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin card {
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// ── Keyframe Animations ──
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+// ── Main Container & Component Hierarchy ──
+.tracker {
+  @include flex-column;
+  align-items: center;
+  gap: 32px;
+  padding: 40px 20px 60px;
+  min-height: 100svh;
+
+  /* Header */
+  .header {
+    text-align: center;
+
+    .title {
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      margin: 0;
+      background: linear-gradient(135deg, var(--accent), #ff6bcb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text);
+      margin: 6px 0 0;
+    }
+  }
+
+  /* Main content layout */
+  .content {
+    display: flex;
+    gap: 28px;
+    width: 100%;
+    max-width: 980px;
+    align-items: flex-start;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Video section */
+    .videoSection {
+      flex: 1;
+      @include flex-column;
+      align-items: center;
+      gap: 16px;
+
+      .videoWrapper {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        border: 2px solid var(--border);
+        background: #000;
+        width: 100%;
+        max-width: 560px;
+        aspect-ratio: 16 / 9;
+
+        .video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transform: scaleX(-1);
+        }
+
+        .loadingOverlay {
+          position: absolute;
+          inset: 0;
+          @include flex-center;
+          flex-direction: column;
+          background: rgba(0, 0, 0, 0.7);
+          color: #fff;
+          gap: 16px;
+          z-index: 2;
+
+          .spinner {
+            width: 36px;
+            height: 36px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+          }
+
+          .loadingText {
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+
+        .errorOverlay {
+          position: absolute;
+          inset: 0;
+          @include flex-center;
+          flex-direction: column;
+          background: rgba(0, 0, 0, 0.8);
+          color: #fff;
+          gap: 8px;
+          z-index: 2;
+
+          .errorIcon {
+            font-size: 40px;
+          }
+
+          .errorText {
+            font-size: 14px;
+            color: #ff6b6b;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .controls {
+        @include flex-column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 560px;
+
+        .detectBtn {
+          width: 100%;
+          padding: 14px 28px;
+          font-size: 16px;
+          font-weight: 600;
+          color: #fff;
+          background: linear-gradient(135deg, var(--accent), #9b4dff);
+          border: none;
+          border-radius: 12px;
+          cursor: pointer;
+          box-shadow: 0 4px 14px rgba(170, 59, 255, 0.35);
+          transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+
+          &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(170, 59, 255, 0.45);
+          }
+
+          &:active:not(:disabled) {
+            transform: translateY(0);
+          }
+
+          &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            box-shadow: none;
+          }
+        }
+
+        .statusBadge {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 6px 14px;
+          border-radius: 20px;
+          font-size: 13px;
+          font-weight: 500;
+          background: var(--accent-bg);
+          color: var(--accent);
+          border: 1px solid var(--accent-border);
+
+          .statusDot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 1.5s ease-in-out infinite;
+          }
+        }
+      }
+    }
+
+    /* Sidebar panel */
+    .sidebar {
+      width: 320px;
+      flex-shrink: 0;
+      @include flex-column;
+      gap: 16px;
+
+      @include mobile {
+        width: 100%;
+        max-width: 560px;
+      }
+
+      /* Placeholder state when mood hasn't been detected yet */
+      .placeholderCard {
+        @include card;
+        @include flex-center;
+        @include flex-column;
+        padding: 40px 24px;
+        text-align: center;
+        gap: 12px;
+
+        .placeholderIcon {
+          font-size: 48px;
+          opacity: 0.6;
+        }
+
+        .placeholderText {
+          font-size: 15px;
+          color: var(--text);
+          line-height: 1.4;
+        }
+      }
+
+      /* Mood card */
+      .moodCard {
+        @include card;
+        padding: 28px 24px;
+        text-align: center;
+        transition: border-color 0.4s ease;
+
+        &:hover .moodEmoji {
+          transform: scale(1.1);
+        }
+
+        .moodEmoji {
+          font-size: 56px;
+          line-height: 1;
+          margin: 0 0 10px;
+          transition: transform 0.3s ease;
+        }
+
+        .moodLabel {
+          font-size: 28px;
+          font-weight: 700;
+          margin: 0;
+          color: var(--text-h);
+          letter-spacing: -0.5px;
+        }
+
+        .confidenceBar {
+          margin: 14px auto 0;
+          width: 80%;
+          height: 6px;
+          border-radius: 3px;
+          background: var(--border);
+          overflow: hidden;
+
+          .confidenceFill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.3s ease, background 0.3s ease;
+          }
+        }
+
+        .confidenceText {
+          font-size: 12px;
+          color: var(--text);
+          margin: 6px 0 0;
+        }
+      }
+
+      /* Scores panel */
+      .scoresPanel {
+        @include card;
+        padding: 20px 24px;
+
+        .scoresPanelTitle {
+          font-size: 14px;
+          font-weight: 600;
+          color: var(--text-h);
+          margin: 0 0 14px;
+          text-transform: uppercase;
+          letter-spacing: 0.6px;
+        }
+
+        .scoreRow {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 12px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .scoreMoodName {
+            width: 76px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-h);
+            text-align: left;
+            flex-shrink: 0;
+          }
+
+          .scoreBarTrack {
+            flex: 1;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--border);
+            overflow: hidden;
+
+            .scoreBarFill {
+              height: 100%;
+              border-radius: 4px;
+              transition: width 0.3s ease;
+            }
+          }
+
+          .scoreValue {
+            width: 36px;
+            font-size: 12px;
+            font-family: var(--mono);
+            color: var(--text);
+            text-align: right;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+  }
+}
