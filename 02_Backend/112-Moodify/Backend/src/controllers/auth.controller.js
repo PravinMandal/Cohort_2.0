@@ -1,6 +1,7 @@
 ﻿const jsonwebtoken = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const userModel = require("../models/user.model");
+const blacklistModel = require("../models/blacklist.model");
 
 
 async function registerUser(req, res) {
@@ -45,7 +46,7 @@ async function loginUser(req, res) {
             {email},
             {username}
         ]
-    });
+    }).select("+password");
 
     if (!user) {
         return res.status(400).json({ message: "Invalid credentials" });
@@ -71,7 +72,34 @@ async function loginUser(req, res) {
     });
 }
 
+async function getMe(req, res) {
+    const user = await userModel.findById(req.user.id).select("-password");
+    return res.status(200).json({
+        message: "User fetched successfully",
+        user
+    });
+}
+
+async function logoutUser(req, res) {
+    const token = req.cookies.token;
+    if (!token) {
+        return res.status(400).json({ message: "User not logged in" });
+    }
+
+    // Clear the cookie, so that the token is removed from the client side.
+    res.clearCookie("token");
+
+    // Blacklist the token, so that it cannot be used again, we added this token in mongoDB blacklist collection.
+    await blacklistModel.create({ token });
+
+    return res.status(200).json({
+        message: "User logged out successfully"
+    });
+}
+
 module.exports = {
     registerUser,
-    loginUser
+    loginUser,
+    getMe,
+    logoutUser
 };
