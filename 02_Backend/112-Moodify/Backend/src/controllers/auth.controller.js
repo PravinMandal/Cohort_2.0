@@ -2,6 +2,7 @@
 const bcrypt = require("bcryptjs");
 const userModel = require("../models/user.model");
 const blacklistModel = require("../models/blacklist.model");
+const redis = require("../config/cache");
 
 
 async function registerUser(req, res) {
@@ -89,8 +90,12 @@ async function logoutUser(req, res) {
     // Clear the cookie, so that the token is removed from the client side.
     res.clearCookie("token");
 
-    // Blacklist the token, so that it cannot be used again, we added this token in mongoDB blacklist collection.
-    await blacklistModel.create({ token });
+    // // Blacklist the token, so that it cannot be used again, we added this token in mongoDB blacklist collection.
+    // await blacklistModel.create({ token });
+
+    //redis is much faster than mongoDB, so we are using redis to blacklist the token.
+    redis.set(token, Date.now().toString(), "EX", 3600); // Blacklist the token in Redis, so that it cannot be used again.
+
 
     return res.status(200).json({
         message: "User logged out successfully"
