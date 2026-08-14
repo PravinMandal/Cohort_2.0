@@ -8,11 +8,12 @@ async function connectToDB() {
   mongoose.set("bufferCommands", false);
 
   await mongoose.connect(process.env.MONGO_URI, {
+    dbName: "Moodify",
     serverSelectionTimeoutMS: 5000,
     connectTimeoutMS: 5000,
   });
 
-  console.log("Connected to MongoDB");
+  console.log(`Connected to MongoDB database: "${mongoose.connection.name}"`);
 }
 
 module.exports = connectToDB;
