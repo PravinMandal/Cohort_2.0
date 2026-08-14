@@ -5,344 +5,612 @@
   justify-content: center;
 }
 
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @mixin flex-column {
   display: flex;
   flex-direction: column;
 }
 
-@mixin card {
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  box-shadow: var(--shadow);
+@mixin ultra-glass {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(16, 13, 28, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 20px 50px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
 @mixin mobile {
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     @content;
   }
 }
 
-// ── Keyframe Animations ──
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+// ── Keyframes ──
+@keyframes scanSweep {
+  0% { top: 0%; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
 }
 
-@keyframes spin {
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.85); }
+}
+
+@keyframes spinFast {
   to { transform: rotate(360deg); }
 }
 
-// ── Main Container & Component Hierarchy ──
+// ── Icon Primitives ──
+.icon,
+.iconStroke {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+
+.icon {
+  fill: currentColor;
+}
+
+.iconStroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+// ── Main Page Layout Container (Fits 100vh Viewport) ──
 .tracker {
   @include flex-column;
   align-items: center;
-  gap: 32px;
-  padding: 40px 20px 60px;
-  min-height: 100svh;
+  height: 100vh;
+  padding: 1.25rem 1.5rem 6.5rem;
+  overflow: hidden;
+  color: var(--ink);
 
-  /* Header */
-  .header {
-    text-align: center;
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    max-width: 1080px;
+    @include flex-between;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1.25rem;
+    @include ultra-glass;
+    border-radius: 16px;
 
-    .title {
-      font-size: 42px;
-      font-weight: 700;
-      letter-spacing: -1.2px;
-      margin: 0;
-      background: linear-gradient(135deg, var(--accent), #ff6bcb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      .brandBadge {
+        @include flex-center;
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #fef08a, #fbbf24);
+        color: #1a1000;
+        box-shadow: 0 4px 16px rgba(251, 191, 36, 0.35);
+      }
+
+      .brandName {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: var(--ink);
+      }
+
+      .versionTag {
+        padding: 0.2rem 0.55rem;
+        border-radius: 999px;
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        background: rgba(251, 191, 36, 0.15);
+        color: var(--yellow-light);
+        border: 1px solid rgba(251, 191, 36, 0.3);
+      }
     }
 
-    .subtitle {
-      font-size: 16px;
-      color: var(--text);
-      margin: 6px 0 0;
+    .userProfile {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+
+      .userInfo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+
+        .userAvatar {
+          @include flex-center;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          background: rgba(251, 191, 36, 0.2);
+          border: 1px solid rgba(251, 191, 36, 0.35);
+          color: var(--yellow-light);
+          font-size: 0.85rem;
+          font-weight: 800;
+        }
+
+        .userName {
+          font-size: 0.88rem;
+          font-weight: 700;
+          color: var(--ink);
+          max-width: 140px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+
+      .logoutBtn {
+        @include flex-center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--muted);
+        cursor: pointer;
+        transition: all 180ms ease;
+
+        &:hover {
+          color: #f87171;
+          background: rgba(239, 68, 68, 0.15);
+          border-color: rgba(239, 68, 68, 0.3);
+        }
+      }
+    }
+
+    .guestBadge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
 
-  /* Main content layout */
-  .content {
-    display: flex;
-    gap: 28px;
+  /* Grid Layout */
+  .contentGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.95fr);
+    gap: 1.5rem;
     width: 100%;
-    max-width: 980px;
-    align-items: flex-start;
+    max-width: 1080px;
 
     @include mobile {
-      flex-direction: column;
-      align-items: center;
+      grid-template-columns: 1fr;
+      overflow-y: auto;
     }
+  }
 
-    /* Video section */
-    .videoSection {
-      flex: 1;
-      @include flex-column;
-      align-items: center;
-      gap: 16px;
+  /* Left Column: Video Block */
+  .videoCard {
+    @include ultra-glass;
+    padding: 1.15rem;
+    @include flex-column;
+    gap: 1.15rem;
 
-      .videoWrapper {
-        position: relative;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        border: 2px solid var(--border);
-        background: #000;
+    .videoViewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #080512;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+
+      .videoFeed {
         width: 100%;
-        max-width: 560px;
-        aspect-ratio: 16 / 9;
-
-        .video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-          transform: scaleX(-1);
-        }
-
-        .loadingOverlay {
-          position: absolute;
-          inset: 0;
-          @include flex-center;
-          flex-direction: column;
-          background: rgba(0, 0, 0, 0.7);
-          color: #fff;
-          gap: 16px;
-          z-index: 2;
-
-          .spinner {
-            width: 36px;
-            height: 36px;
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            border-top-color: var(--accent);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-          }
-
-          .loadingText {
-            font-size: 14px;
-            font-weight: 500;
-          }
-        }
-
-        .errorOverlay {
-          position: absolute;
-          inset: 0;
-          @include flex-center;
-          flex-direction: column;
-          background: rgba(0, 0, 0, 0.8);
-          color: #fff;
-          gap: 8px;
-          z-index: 2;
-
-          .errorIcon {
-            font-size: 40px;
-          }
-
-          .errorText {
-            font-size: 14px;
-            color: #ff6b6b;
-            font-weight: 500;
-          }
-        }
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transform: scaleX(-1);
       }
 
-      .controls {
-        @include flex-column;
+      /* Viewport Corner Reticles */
+      .cornerTL, .cornerTR, .cornerBL, .cornerBR {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 2.5px solid rgba(251, 191, 36, 0.6);
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .cornerTL { top: 12px; left: 12px; border-right: 0; border-bottom: 0; border-radius: 4px 0 0 0; }
+      .cornerTR { top: 12px; right: 12px; border-left: 0; border-bottom: 0; border-radius: 0 4px 0 0; }
+      .cornerBL { bottom: 12px; left: 12px; border-right: 0; border-top: 0; border-radius: 0 0 0 4px; }
+      .cornerBR { bottom: 12px; right: 12px; border-left: 0; border-top: 0; border-radius: 0 0 4px 0; }
+
+      /* Scanning Beam */
+      .scanLine {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2.5px;
+        background: linear-gradient(90deg, transparent, var(--yellow-light), var(--yellow-primary), transparent);
+        box-shadow: 0 0 14px var(--yellow-primary);
+        z-index: 2;
+        pointer-events: none;
+        animation: scanSweep 3.5s linear infinite;
+      }
+
+      /* Camera Live Badge */
+      .liveBadge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 3;
+        display: inline-flex;
         align-items: center;
-        gap: 12px;
-        width: 100%;
-        max-width: 560px;
+        gap: 0.45rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        background: rgba(10, 8, 20, 0.78);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(251, 191, 36, 0.3);
+        color: var(--yellow-light);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
 
-        .detectBtn {
-          width: 100%;
-          padding: 14px 28px;
-          font-size: 16px;
-          font-weight: 600;
-          color: #fff;
-          background: linear-gradient(135deg, var(--accent), #9b4dff);
-          border: none;
-          border-radius: 12px;
-          cursor: pointer;
-          box-shadow: 0 4px 14px rgba(170, 59, 255, 0.35);
-          transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
-
-          &:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(170, 59, 255, 0.45);
-          }
-
-          &:active:not(:disabled) {
-            transform: translateY(0);
-          }
-
-          &:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            box-shadow: none;
-          }
-        }
-
-        .statusBadge {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          padding: 6px 14px;
-          border-radius: 20px;
-          font-size: 13px;
-          font-weight: 500;
-          background: var(--accent-bg);
-          color: var(--accent);
-          border: 1px solid var(--accent-border);
-
-          .statusDot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent);
-            animation: pulse 1.5s ease-in-out infinite;
-          }
+        .pulseDot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: var(--yellow-primary);
+          box-shadow: 0 0 10px var(--yellow-primary);
+          animation: pulseGlow 1.8s ease-in-out infinite;
         }
       }
-    }
 
-    /* Sidebar panel */
-    .sidebar {
-      width: 320px;
-      flex-shrink: 0;
-      @include flex-column;
-      gap: 16px;
-
-      @include mobile {
-        width: 100%;
-        max-width: 560px;
-      }
-
-      /* Placeholder state when mood hasn't been detected yet */
-      .placeholderCard {
-        @include card;
+      /* Loading Overlay */
+      .loadingOverlay {
+        position: absolute;
+        inset: 0;
+        z-index: 4;
         @include flex-center;
         @include flex-column;
-        padding: 40px 24px;
-        text-align: center;
-        gap: 12px;
+        gap: 1rem;
+        background: rgba(10, 8, 20, 0.88);
+        backdrop-filter: blur(14px);
+        color: #fff;
 
-        .placeholderIcon {
-          font-size: 48px;
-          opacity: 0.6;
+        .glassSpinner {
+          width: 2.2rem;
+          height: 2.2rem;
+          border: 3px solid rgba(255, 255, 255, 0.12);
+          border-top-color: var(--yellow-primary);
+          border-radius: 50%;
+          animation: spinFast 0.8s linear infinite;
         }
 
-        .placeholderText {
-          font-size: 15px;
-          color: var(--text);
-          line-height: 1.4;
+        .loadingText {
+          font-size: 0.88rem;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.9);
+          letter-spacing: 0.02em;
         }
       }
 
-      /* Mood card */
-      .moodCard {
-        @include card;
-        padding: 28px 24px;
-        text-align: center;
-        transition: border-color 0.4s ease;
+      /* Error Overlay */
+      .errorOverlay {
+        position: absolute;
+        inset: 0;
+        z-index: 4;
+        @include flex-center;
+        @include flex-column;
+        gap: 0.75rem;
+        background: rgba(10, 8, 20, 0.94);
+        color: #fff;
 
-        &:hover .moodEmoji {
-          transform: scale(1.1);
+        .errorIconCircle {
+          @include flex-center;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          background: rgba(239, 68, 68, 0.15);
+          color: #f87171;
+          border: 1px solid rgba(239, 68, 68, 0.3);
         }
 
-        .moodEmoji {
-          font-size: 56px;
-          line-height: 1;
-          margin: 0 0 10px;
-          transition: transform 0.3s ease;
+        .errorText {
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #f87171;
+        }
+      }
+    }
+
+    /* Control Bar */
+    .controlsBar {
+      @include flex-column;
+      gap: 0.75rem;
+
+      .actionBtn {
+        width: 100%;
+        min-height: 3.15rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.65rem;
+        padding: 0.85rem 1.5rem;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 0.95rem;
+        font-weight: 800;
+        color: #1a1000;
+        background: linear-gradient(135deg, #fef08a, #fbbf24);
+        box-shadow: 0 10px 24px rgba(251, 191, 36, 0.3);
+        transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+
+        &:hover:not(:disabled) {
+          transform: translateY(-2px);
+          box-shadow: 0 14px 30px rgba(251, 191, 36, 0.45);
+          background: linear-gradient(135deg, #fffbeb, #f59e0b);
         }
 
-        .moodLabel {
-          font-size: 28px;
-          font-weight: 700;
-          margin: 0;
-          color: var(--text-h);
-          letter-spacing: -0.5px;
+        &:active:not(:disabled) {
+          transform: translateY(0);
         }
 
-        .confidenceBar {
-          margin: 14px auto 0;
-          width: 80%;
+        &:disabled {
+          opacity: 0.45;
+          cursor: not-allowed;
+          box-shadow: none;
+        }
+      }
+
+      .statusIndicator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.45rem;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--muted);
+
+        .statusDot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: #64748b;
+          transition: background 200ms ease;
+
+          &[data-active="true"] {
+            background: var(--yellow-primary);
+            box-shadow: 0 0 8px var(--yellow-primary);
+          }
+        }
+      }
+    }
+  }
+
+  /* Right Column: Sidebar / Results */
+  .insightsCard {
+    width: 100%;
+
+    /* Placeholder Card */
+    .readyPlaceholder {
+      @include ultra-glass;
+      @include flex-center;
+      @include flex-column;
+      padding: 3rem 1.75rem;
+      text-align: center;
+
+      .pulseIconBadge {
+        @include flex-center;
+        width: 3.8rem;
+        height: 3.8rem;
+        border-radius: 20px;
+        background: rgba(251, 191, 36, 0.15);
+        color: var(--yellow-light);
+        border: 1px solid rgba(251, 191, 36, 0.3);
+        margin-bottom: 1.2rem;
+
+        .icon {
+          width: 1.8rem;
+          height: 1.8rem;
+        }
+      }
+
+      h2 {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.86rem;
+        color: var(--muted);
+        line-height: 1.6;
+        max-width: 260px;
+
+        strong {
+          color: var(--ink);
+        }
+      }
+    }
+
+    /* Results Wrapper */
+    .resultsWrapper {
+      @include flex-column;
+      gap: 1.15rem;
+
+      /* Primary Hero Mood Card */
+      .moodHeroCard {
+        position: relative;
+        @include ultra-glass;
+        padding: 1.35rem 1.5rem;
+        overflow: hidden;
+        border: 2px solid var(--mood-color, var(--yellow-primary));
+
+        .cardHeader {
+          @include flex-between;
+          margin-bottom: 1.15rem;
+
+          .sectionTag {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+          }
+
+          .confidencePill {
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--ink);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+          }
+        }
+
+        .moodHeroContent {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          margin-bottom: 1.25rem;
+
+          .emojiBadge {
+            @include flex-center;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 2rem;
+            line-height: 1;
+            flex-shrink: 0;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+          }
+
+          .moodTextGroup {
+            .moodTitle {
+              font-family: var(--font-display);
+              font-size: 1.65rem;
+              font-weight: 800;
+              letter-spacing: -0.04em;
+              line-height: 1.1;
+              color: var(--ink);
+              margin-bottom: 0.35rem;
+            }
+
+            .moodDescription {
+              font-size: 0.82rem;
+              color: var(--muted);
+              line-height: 1.5;
+            }
+          }
+        }
+
+        .confidenceTrack {
+          width: 100%;
           height: 6px;
-          border-radius: 3px;
-          background: var(--border);
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.08);
           overflow: hidden;
 
           .confidenceFill {
             height: 100%;
-            border-radius: 3px;
-            transition: width 0.3s ease, background 0.3s ease;
+            border-radius: 999px;
+            background: var(--mood-color, var(--yellow-primary));
+            box-shadow: 0 0 12px var(--mood-color, var(--yellow-primary));
+            transition: width 450ms cubic-bezier(0.4, 0, 0.2, 1);
           }
-        }
-
-        .confidenceText {
-          font-size: 12px;
-          color: var(--text);
-          margin: 6px 0 0;
         }
       }
 
-      /* Scores panel */
-      .scoresPanel {
-        @include card;
-        padding: 20px 24px;
+      /* Sentiment Spectrum Breakdown Card */
+      .breakdownCard {
+        @include ultra-glass;
+        padding: 1.15rem 1.4rem;
 
-        .scoresPanelTitle {
-          font-size: 14px;
-          font-weight: 600;
-          color: var(--text-h);
-          margin: 0 0 14px;
+        .breakdownTitle {
+          font-size: 0.72rem;
+          font-weight: 800;
+          letter-spacing: 0.08em;
           text-transform: uppercase;
-          letter-spacing: 0.6px;
+          color: var(--muted);
+          margin-bottom: 0.95rem;
         }
 
-        .scoreRow {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-bottom: 12px;
+        .breakdownList {
+          @include flex-column;
+          gap: 0.85rem;
 
-          &:last-child {
-            margin-bottom: 0;
-          }
+          .spectrumRow {
+            @include flex-column;
+            gap: 0.35rem;
 
-          .scoreMoodName {
-            width: 76px;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-h);
-            text-align: left;
-            flex-shrink: 0;
-          }
+            .spectrumInfo {
+              @include flex-between;
 
-          .scoreBarTrack {
-            flex: 1;
-            height: 8px;
-            border-radius: 4px;
-            background: var(--border);
-            overflow: hidden;
+              .moodName {
+                font-size: 0.84rem;
+                font-weight: 700;
+                color: var(--ink);
+              }
 
-            .scoreBarFill {
-              height: 100%;
-              border-radius: 4px;
-              transition: width 0.3s ease;
+              .moodScore {
+                font-size: 0.78rem;
+                font-weight: 800;
+                color: var(--muted);
+              }
             }
-          }
 
-          .scoreValue {
-            width: 36px;
-            font-size: 12px;
-            font-family: var(--mono);
-            color: var(--text);
-            text-align: right;
-            flex-shrink: 0;
+            .spectrumTrack {
+              width: 100%;
+              height: 7px;
+              border-radius: 999px;
+              background: rgba(255, 255, 255, 0.06);
+              overflow: hidden;
+
+              .spectrumFill {
+                height: 100%;
+                border-radius: 999px;
+                transition: width 450ms cubic-bezier(0.4, 0, 0.2, 1);
+              }
+            }
+
+            &[data-dominant="true"] {
+              .spectrumInfo {
+                .moodName {
+                  color: var(--yellow-light);
+                }
+                .moodScore {
+                  color: var(--ink);
+                }
+              }
+            }
           }
         }
       }

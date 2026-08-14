@@ -1,4 +1,4 @@
-// Shared auth shell. Reused by login and register routes.
+﻿// Shared auth shell. Reused by login and register routes.
 .auth-page {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.92fr);
@@ -17,16 +17,16 @@
     isolation: isolate;
     color: #fff;
     background:
-      radial-gradient(circle at 16% 18%, rgba(255, 255, 255, 0.16), transparent 26%),
-      radial-gradient(circle at 82% 84%, rgba(255, 139, 87, 0.26), transparent 28%),
-      linear-gradient(145deg, #25104d 0%, #4b1e86 48%, #7c3aed 100%);
+      radial-gradient(circle at 16% 18%, rgba(168, 85, 247, 0.25), transparent 30%),
+      radial-gradient(circle at 82% 84%, rgba(255, 139, 87, 0.2), transparent 30%),
+      linear-gradient(145deg, #0f0a1c 0%, #1a1033 48%, #2d1254 100%);
 
     &::before,
     &::after {
       position: absolute;
       z-index: -1;
       display: block;
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 50%;
       content: "";
     }
@@ -75,7 +75,7 @@
     height: 0.45rem;
     border-radius: 50%;
     background: var(--success);
-    box-shadow: 0 0 0 4px rgba(66, 201, 139, 0.12);
+    box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.15);
   }
 
   &__visual-content {
@@ -132,10 +132,10 @@
     margin-top: 2.5rem;
     padding: 1.25rem;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 1.4rem;
-    background: rgba(27, 10, 61, 0.35);
-    box-shadow: 0 1.5rem 3rem rgba(18, 4, 46, 0.2);
+    background: rgba(18, 12, 38, 0.55);
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(14px);
   }
 
@@ -288,7 +288,7 @@
 
     .auth-card__eyebrow {
       margin-bottom: 0.8rem;
-      color: var(--purple);
+      color: var(--purple-light);
       font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.12em;
@@ -301,6 +301,7 @@
       font-weight: 800;
       letter-spacing: -0.075em;
       line-height: 1;
+      color: var(--ink);
     }
 
     > p:last-child {
@@ -318,11 +319,11 @@
     text-align: center;
 
     a {
-      color: var(--purple);
+      color: var(--purple-light);
       font-weight: 800;
 
       &:hover {
-        color: var(--purple-dark);
+        color: #e9d5ff;
         text-decoration: underline;
       }
     }
@@ -367,17 +368,17 @@
     transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 
     &::placeholder {
-      color: #aaa5b5;
+      color: #635c7d;
     }
 
     &:hover {
-      border-color: #cfc7df;
+      border-color: rgba(168, 85, 247, 0.3);
     }
 
     &:focus {
       border-color: var(--purple);
-      background: #fff;
-      box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+      background: var(--surface-card);
+      box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.2);
     }
   }
 
@@ -395,6 +396,28 @@
       height: 1rem;
       accent-color: var(--purple);
     }
+  }
+
+  &__error {
+    margin-bottom: 0.9rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 0.75rem;
+    color: #fca5a5;
+    background: rgba(239, 68, 68, 0.1);
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  &__status {
+    color: var(--muted);
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: 0.45rem;
   }
 }
 
@@ -441,31 +464,5 @@
     &__visual-card {
       margin-top: 2rem;
     }
-  }
-}
-
-
-
-.auth-form {
-  &__error {
-    margin-bottom: 0.9rem;
-    padding: 0.75rem 0.9rem;
-    border: 1px solid rgba(220, 38, 38, 0.2);
-    border-radius: 0.75rem;
-    color: #b42318;
-    background: #fff1f0;
-    font-size: 0.8rem;
-    line-height: 1.4;
-  }
-
-  &__status {
-    color: var(--muted);
-    font-size: 0.78rem;
-    text-align: center;
-  }
-
-  &__submit {
-    width: 100%;
-    margin-top: 0.45rem;
   }
 }

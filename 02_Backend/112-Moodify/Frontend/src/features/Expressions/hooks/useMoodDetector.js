@@ -9,6 +9,7 @@ export default function useMoodDetector(expressions) {
     const result = detectMood(expressions);
     setDetectedMood(result);
     setHasDetected(true);
+    return result;
   }, [expressions]);
 
   return {
