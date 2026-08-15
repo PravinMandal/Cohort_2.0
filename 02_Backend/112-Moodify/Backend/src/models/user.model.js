@@ -18,14 +18,11 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: [true, "Password is required"],
-      select: false,
+      select: false, //password kbhi bhi nhi jayega by default (+password krna pdega tab milega).
     },
   },
   { timestamps: true }
 );
-
-userSchema.pre("save", function (next) {})
-userSchema.post("save", function (next) {})
 
 const userModel = mongoose.model("User", userSchema);
 module.exports = userModel;

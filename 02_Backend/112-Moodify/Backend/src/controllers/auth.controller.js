@@ -74,6 +74,7 @@ async function loginUser(req, res) {
 }
 
 async function getMe(req, res) {
+    // req.user hume middleware ki wajah se mil raha hai
     const user = await userModel.findById(req.user.id).select("-password");
     return res.status(200).json({
         message: "User fetched successfully",

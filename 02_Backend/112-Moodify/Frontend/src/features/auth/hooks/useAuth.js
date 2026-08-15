@@ -1,5 +1,5 @@
 ﻿import { useContext } from "react";
-import { AuthContext } from "../auth.context.js";
+import { AuthContext } from "../auth.context.jsx";
 import { getMe, login, logout, register } from "../services/auth.api.js";
 import { songContext } from "../../home/song.context.jsx";
 
