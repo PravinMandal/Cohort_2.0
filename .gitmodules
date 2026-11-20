@@ -1,3 +1,12 @@
-﻿[submodule "01_Frontend/07. Mac OS"]
+[submodule "01_Frontend/06. React/69. React Basics/02. Class Task"]
+	path = 01_Frontend/06. React/69. React Basics/02. Class Task
+	url = https://github.com/PravinMandal/Horizon_Courts.git
+[submodule "01_Frontend/06. React/70. DVSY Tailwind CSS"]
+	path = 01_Frontend/06. React/70. DVSY Tailwind CSS
+	url = https://github.com/PravinMandal/DVSY.git
+[submodule "01_Frontend/06. React/78. Pokemon"]
+	path = 01_Frontend/06. React/78. Pokemon
+	url = https://github.com/PravinMandal/PokeDex.git
+[submodule "01_Frontend/07. Mac OS"]
 	path = 01_Frontend/07. Mac OS
 	url = https://github.com/PravinMandal/Mac_OS.git
